@@ -1,0 +1,42 @@
+div > a{
+    color:black;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 22px;
+}
+div >a:hover{
+    transition: 0.25s;
+    background: rgb(56, 130, 209);
+    color: white;
+}
+.container-main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.container-main img {
+    width: 100px;
+    height: auto;
+}
+
+.container-main a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    align-self: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f8f8f8;
+    padding: 10px 0;
+}
+
+.container a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    padding: 0 10px;
+}

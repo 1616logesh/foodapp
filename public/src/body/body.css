@@ -1,0 +1,44 @@
+
+.body {
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.body p {
+    margin: 0;
+    color: #000;
+    font-size: 1.25rem;
+}
+
+.item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.offer {
+    font-weight: bold;
+    color: red;
+}
+
+.details {
+    margin-top: 10px;
+}
+
+.rating {
+    font-size: 14px;
+}
+
+.cuisine {
+    font-size: 12px;
+    color: #555;
+}
