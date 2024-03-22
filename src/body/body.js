@@ -1,13 +1,25 @@
-import { useState } from 'react';
-import { IMAGE_URL } from '../config.js';
+import { useEffect, useState } from 'react';
+import { IMAGE_URL, RESTAURANT_API_URL } from '../config.js';
+import Loader from '../loader.js';
 import { restaurantData } from '../restaurantData.js';
 import './body.css';
 const Body = () => {
-    const {restaurants} = restaurantData[4].card.card.gridElements.infoWithStyle;
-    const [name,setName]= useState("Suresh")
+    const [name,setName]= useState("Suresh");
+    const [restaurantList,setRestaurantList]= useState([]);
     const handleClick = ()=>{
         setName("vignesh");
     }
+    useEffect(()=>{
+        fetchRestaurants()
+    },[])
+
+    const fetchRestaurants = async()=>{
+        const resData = await fetch(RESTAURANT_API_URL);
+        const resResult = await resData.json();
+        setRestaurantList(resResult?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    }
+    if(restaurantList.length===0)
+        return <Loader/>
     return (
         <div className="body">
             {console.log("Hi i have rendered")}
@@ -15,7 +27,7 @@ const Body = () => {
             <div className="content">
                 <div>{name}</div>
                 <button onClick={handleClick}>changeVale</button>
-                {restaurants.map(({info})=>{
+                {restaurantList?.map(({info})=>{
                     return(
                         <div className="item">
                     <img src={IMAGE_URL+info.cloudinaryImageId} alt="BOX8 Desi Meals"></img>
@@ -51,6 +63,7 @@ const Body = () => {
                     </div> */}
                 </div>
             </div>
+        
 
     )
 }
