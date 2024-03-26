@@ -3,6 +3,7 @@ import Sample, { Sample1 } from './sample';
 import Header from './header/header';
 import Body from './body/body';
 import Footer from './footer/footer';
+import TodoList from './todolist/todo';
 function App() {
   const name = "Deviprasath";
   return (
@@ -16,6 +17,7 @@ function App() {
       <Header/>
       <Body/>
       <Footer/>
+      <TodoList/>
     </div>
     
   );
