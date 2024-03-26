@@ -1,4 +1,5 @@
 import './header.css';
+import { Link } from 'react-router-dom';
  const Header = () => {
     return(
     <>
@@ -9,7 +10,7 @@ import './header.css';
             <div class="container">
                 <a href="/search"> <input type="text" placeholder="Search"></input>
                     search</a>
-                <a href="/offer">offer</a>
+                <Link to ="/offer">offer</Link>
                 <a href="/help">help</a>
                 <a href="/sign_in">sign in</a>
                 <a href="/cart">cart</a>
