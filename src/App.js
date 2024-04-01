@@ -1,9 +1,7 @@
 import './App.css';
-import Sample, { Sample1 } from './sample';
-import Header from './header/header';
 import Body from './body/body';
 import Footer from './footer/footer';
-
+import Header from './header/header';
 function App() {
   const name = "Deviprasath";
   return (

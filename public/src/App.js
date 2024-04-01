@@ -3,6 +3,7 @@ import Sample, { Sample1 } from './sample';
 import Header from './header/header';
 import Body from './body/body';
 import Footer from './footer/footer';
+import { Outlet } from 'react-router-dom';
 function App() {
   const name = "Deviprasath";
   return (
@@ -14,7 +15,7 @@ function App() {
 
       </header> */}
       <Header/>
-      <Body/>
+      <Outlet/>
       <Footer/>
     </div>
     
