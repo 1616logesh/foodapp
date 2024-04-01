@@ -2,6 +2,7 @@ import './App.css';
 import Body from './body/body';
 import Footer from './footer/footer';
 import Header from './header/header';
+import { Outlet } from 'react-router-dom';
 function App() {
   const name = "Deviprasath";
   return (
@@ -13,7 +14,7 @@ function App() {
 
       </header> */}
       <Header/>
-      <Body/>
+      <Outlet/>
       <Footer/>
     </div>
     

@@ -1,5 +1,5 @@
-import './header.css';
 import { Link } from 'react-router-dom';
+import './header.css';
  const Header = () => {
     return(
     <>
@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
                 <a href="/search"> <input type="text" placeholder="Search"></input>
                     search</a>
                 <Link to ="/offer">offer</Link>
-                <a href="/help">help</a>
+                <Link to="/help">help</Link>
                 <a href="/sign_in">sign in</a>
                 <a href="/cart">cart</a>
             </div>
