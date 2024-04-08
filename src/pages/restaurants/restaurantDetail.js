@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { RESTAURNAT_DETAIL_URL } from "../../config";
-import TabComponent from "./tabComponent/tabComponent";
 import Loader from "../../loader";
+import FoodMenu from "./foodMenu/foodMenu";
 import './restaurantDetail.css';
-import RestaurantMenu from "./restaurantMenu/restaurantMenu";
-import RestaurantPage from "../../body/dineonline";
-
+import RestaurantInfo from "./restaurantMenu/restaurantMenu";
+import TabComponent from "./tabComponent/tabComponent";
 const Restaurantdetail = () => {
     const params = useParams();
     const [resData, setResData] = useState([]);
@@ -39,7 +38,7 @@ const Restaurantdetail = () => {
                 <TabComponent tabs={resData[1].card.card.tabs} />
             </div>
             <div className="restaurantMenuSection">
-                <RestaurantMenu />
+                <RestaurantInfo/>
             </div>
             {resData[1] && (
                 <div className="infoCard">
@@ -49,6 +48,15 @@ const Restaurantdetail = () => {
                 
                 
             )}
+                <div className="foodMenu">
+                    {resData.map((card,index)=>{
+                        return(
+                            <div key={index} className="foodMenuSection">
+                                <FoodMenu menuItems={card?.groupedCard?.cardGroupMap?.REGULAR?.cards}/>
+                            </div>
+                        )
+                    })}
+                </div>
         </>
     );
 };

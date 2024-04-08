@@ -5,9 +5,10 @@ const TabComponent = ({tabs})=>{
         <div className="tabSection">
             {tabs.map((tab)=>{
                 return(<div key={tab.id} className="tabContent">
-                    <span>{tab.title}</span>
+                    <span >{tab.title}</span>
                 </div>)
             })}
+            
         </div>
         </>
     )

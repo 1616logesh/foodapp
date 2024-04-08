@@ -1,4 +1,4 @@
- const RestaurantMenu = ()=>{
+ const RestaurantInfo = ()=>{
     return(
         <>
             This is the restaurant menu component
@@ -6,4 +6,4 @@
     )
  }
 
- export default RestaurantMenu;
+ export default RestaurantInfo;
