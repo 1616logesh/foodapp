@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const RestaurantPage = () => {
+const RestaurantPage = ({ card }) => {
     const [showOrderOnline, setShowOrderOnline] = useState(true);
 
     const handleOrderOnlineClick = () => {
@@ -14,14 +14,16 @@ const RestaurantPage = () => {
     return (
         <div className="container">
             <input type="text" placeholder="Search..." />
-            <button id="orderOnlineBtn" onClick={handleOrderOnlineClick}>Order Online</button>
-            <button id="dineoutBtn" onClick={handleDineOutClick}>Dine Out</button>
+            <div className="toggleBar">
+                <button className={showOrderOnline ? "active" : ""} onClick={handleOrderOnlineClick}>Order Online</button>
+                <button className={!showOrderOnline ? "active" : ""} onClick={handleDineOutClick}>Dine Out</button>
+            </div>
 
             {showOrderOnline ? (
                 <div id="orderOnlineView" className="view">
                     <p>Order Online View</p>
-                    <p>₹400 for two</p>
-                    <p>Rajiv Gandhi Salai Road OMR ⚑</p>
+                    <p>{card.gridElements.infoWithStyle.restaurants[0].info.costForTwo}</p>
+                    <p>{card.gridElements.infoWithStyle.restaurants[0].info.locality} {card.gridElements.infoWithStyle.restaurants[0].info.areaName} ⚑</p>
                     <p>A delivery fee will apply</p>
                     <p className="discount">15% Off Upto ₹100 USE HSBCMANIA</p>
                 </div>

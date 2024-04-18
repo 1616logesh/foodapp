@@ -3,10 +3,11 @@ import './header.css';
  const Header = () => {
     return(
     <>
-        <div>
-            <div>
+        
+        <div class=" p-[150px] shadow-xl ">
+            <div class="max-w-[1200px] mx-auto border border-red-500">
                 <img scr=""></img>
-            </div>
+           
             <div class="container">
                 <a href="/search"> <input type="text" placeholder="Search"></input>
                     search</a>
@@ -15,7 +16,9 @@ import './header.css';
                 <a href="/sign_in">sign in</a>
                 <a href="/cart">cart</a>
             </div>
+            </div>
         </div>
+       
     </>)
 }
 
